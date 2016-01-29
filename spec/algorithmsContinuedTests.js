@@ -126,8 +126,6 @@
           var returnedString = collections.stringRepeat(testCase, 3);
           var result = 'you used to call me on my cell phone' + '\n' + 'you used to call me on my cell phone' + '\n' + 'you used to call me on my cell phone';
 
-          console.log(returnedString);
-          console.log(result);
           expect(returnedString).to.equal(result);
 
         });
