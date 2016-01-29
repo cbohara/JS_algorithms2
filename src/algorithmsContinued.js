@@ -70,7 +70,7 @@ Today we're going to continue to build up your algorithm building muscles with s
 
 */
 
-// 1. create a function, collections.naiveRange, that goes takes a number as a parameter and returns an array with filled with every value up until the input parameter
+// 1. create a function, collections.naiveRange, that takes a number as a parameter and returns an array with filled with every value up until the input parameter.
 
 
 
