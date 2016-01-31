@@ -79,8 +79,6 @@ collections.naiveRange = function(number){
   }
 };
 
-//collections.naiveRange seems to be working correctly but not confirmed by test
-
 // 2. create a function, collections.typeCheck, that takes the parameter 'collection' and returns 'object' if the collection is an object, and 'array' if the collection is an array.
 
 collections.typeCheck = function(collection){
@@ -145,21 +143,16 @@ collections.wordCount = function(string){
         you used to call me on my cell phone'
 
     */
-
+// WHY DOES THIS NOT REPEAT?????
 collections.stringRepeat = function(string, number){
-  //create a do while loop that will return the original string if the input parameter is less than 1
-  //otherwise it will repeat the input string as many times as the input number indicates
-  do {
-    //initialize variable to use as counter
-    var i = 0;
-    debug('in loop',string);
-  } while (i < number);
+    for(var i = 0; i < number; i++){
+      console.log(string);
+    }
 };
-
-
-var testCase = 'you used to call me on my cell phone';
-var newString = collections.stringRepeat(testCase, 3); 
-debug('newString',newString);
+ 
+// var testCase = 'you used to call me on my cell phone'
+// var newString = collections.stringRepeat(testCase, 3);
+// console.log('newString',newString);
 
 // 6. create a function, collections.noUms that takes a string and returns a similar string but without the the word 'um'.
     /*
@@ -170,8 +163,20 @@ debug('newString',newString);
         collections.noUm(testString); --> 'hey i like to eat pizza would you like some pizza too?'
 
     */
-
-
+collections.noUms = function(string){
+  //use split method to transform a string of words into an array in which each index value is a single word of the input string
+  var array = string.split(" ");
+  //loop through each index in array to determine if the word is 'um'
+  for(var i = 0; i < array.length; i++){
+    //if word in array is 'um', cut that index out of the array
+    if(array[i] === "um"){
+      array.splice(i,1);
+    }
+  }
+  //now that indexes that contained 'um' have been eliminated from array, the array needs to be transformed back into a string
+  var returnString = array.join(' ');
+  return returnString;
+};
 
 // 7. create a function, collections.maxValue that returns the largest number in an array
   /*
@@ -183,10 +188,18 @@ debug('newString',newString);
     collection.maxValue(testArr) ---> 296;
 
  */
-
-
-
-
+collections.maxValue = function(array){
+  //create a variable to hold the maximum number
+  var max = 0;
+  //loop through array
+  for(var i = 0; i < array.length; i++){
+    //if the first value is greater than the second value, overwrite it into the max variable
+    if(array[i] > max){
+      max = array[i];
+    }
+  }
+  return max;
+};
 
 // =============================== EXTRA CREDIT ============================================================
 
