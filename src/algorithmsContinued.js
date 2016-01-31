@@ -16,8 +16,8 @@ Today we're going to continue to build up your algorithm building muscles with s
 
       [ ] Identify your inputs and outputs:
 
-        "What does this function take as parameters?"
-        "What does this function return to the user?"
+        "What does this function take as parameters?" 2 numbers
+        "What does this function return to the user?" a message that indicates which number is larger of the two
 
         [ ] Create your function and type out your inputs and outputs:
   
@@ -66,21 +66,35 @@ Today we're going to continue to build up your algorithm building muscles with s
               }
 
            }
-
-
 */
 
-// 1. create a function, collections.naiveRange, that takes a number as a parameter and returns an array with filled with every value up until the input parameter.
+// 1. create a function, collections.naiveRange, that takes a number as a parameter and returns an array filled with every value up until the input parameter.
 
+collections.naiveRange = function(number){
+  //create an empty array that will be filled with every value up until the input parameter 
+  var array = [];
+  //create a for loop that will input values into an array
+  for(var i = 0; i < number; i++){
+    array.push(i);
+  }
+};
 
+//collections.naiveRange seems to be working correctly but not confirmed by test
 
 // 2. create a function, collections.typeCheck, that takes the parameter 'collection' and returns 'object' if the collection is an object, and 'array' if the collection is an array.
 
+collections.typeCheck = function(collection){
+  if(Array.isArray(collection)){
+    return 'array';
+  }
+  else if(typeof collection === 'object'){
+    return 'object';
+  }
+};
 
-// 3. create a function, collection.naiveFormValidator that takes an object and checks to see whether the fields, 'name', 'location', and 'phoneNumber' are filled out
-    
+// 3. create a function, collections.naiveFormValidator that takes an object and checks to see whether the fields, 'name', 'location', and 'phoneNumber' are filled out
+
     /*
-      example: 
 
       var form = {name: 'Kanye', location: 'Chicago', phoneNumber: 5102748212};
 
@@ -90,12 +104,33 @@ Today we're going to continue to build up your algorithm building muscles with s
       CHECK THE TEST SUITE IN THE BROWSER TO FIGURE OUT WHAT YOU SHOULD RETURN IN ALL OTHER CASES
     */
 
-
+collections.naiveFormValidator = function(object){
+  //if all fields of the form are completed, confirm form is complete
+  if(typeof object.name === 'string' && typeof object.location === 'string' && typeof object.phoneNumber === 'number'){
+      return 'form is complete';
+    }
+  //if name is missing, return 'name field is required!'
+  else if(typeof object.name != 'string' && typeof object.location === 'string' && typeof object.phoneNumber === 'number'){
+      return 'name field is required!';
+  }
+  //if location is missing, return 'location field is required!'
+  else if(typeof object.name === 'string' && typeof object.location != 'string' && typeof object.phoneNumber === 'number'){
+    return 'location field is required!';
+  }
+  //if phone number is missing, return 'phone field is required!'
+  else if(typeof object.name === 'string' && typeof object.location === 'string' && typeof object.phoneNumber != 'number'){
+    return 'phone field is required!';
+  }
+};
 
 // 4. create a function, collections.wordCount that takes a string as a parameter and returns how many words it contians. Punctuation does not count.
     // **HINT** Look up the string method 'split';
 
-
+collections.wordCount = function(string){
+  //use split method to transform a string of words into an array in which each index value is a single word of the input string
+  //use the length method to determine the number of words in the original input string
+  return string.split(" ").length;
+};
 
 // 5. create a function, collections.stringRepeat that takes a string and a number as parameters and returns a string with the phrase quoted 3 times separated by a new line.
 
@@ -110,6 +145,21 @@ Today we're going to continue to build up your algorithm building muscles with s
         you used to call me on my cell phone'
 
     */
+
+collections.stringRepeat = function(string, number){
+  //create a do while loop that will return the original string if the input parameter is less than 1
+  //otherwise it will repeat the input string as many times as the input number indicates
+  do {
+    //initialize variable to use as counter
+    var i = 0;
+    debug('in loop',string);
+  } while (i < number);
+};
+
+
+var testCase = 'you used to call me on my cell phone';
+var newString = collections.stringRepeat(testCase, 3); 
+debug('newString',newString);
 
 // 6. create a function, collections.noUms that takes a string and returns a similar string but without the the word 'um'.
     /*
