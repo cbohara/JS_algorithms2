@@ -198,11 +198,21 @@ collections.maxValue = function(array){
   return max;
 };
 
-// =============================== EXTRA CREDIT ============================================================
+// =============================== EXTRA CREDIT ==============
+
 
 
 // 8. create a function, collections.advancedRange, that takes two parameters, start and stop, and returns an array filled values starting at 'start', and up until 'stop'.
 
+collections.advancedRange = function(start, stop){
+  //create empty array to store return array
+  var array = [];
+  //use for loop to input numbers into array starting at 'start' number and continuing up until 'stop'
+  for(var i = start; i < stop; i++){
+    array.push(i);
+  }
+  return array;
+};
  
  //9. create a function, collections.passwordCheck that takes a string and checks the following parameters:
     /*
@@ -214,7 +224,16 @@ collections.maxValue = function(array){
         if not, return, 'your password needs work';
     */
 
-
+collections.passwordCheck = function(string){
+  //split string password into array with one character per array index
+  var array = string.split("");
+  //return 'your password needs work' if password is not at least 7 characters long
+  if(array.length < 7)
+    return 'your password needs work';
+  //loop through array to determine if password contains at least one number 
+  //loop through array to determine if password contains at least one capital letter
+};
+collections.passwordCheck('hello1234');
 
 
 //10. create a function collections.matrixMaxTraversal that goes through an array of arrays filled with numbers, and returns an array filled with the highest numbers in each array
