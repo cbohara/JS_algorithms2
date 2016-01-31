@@ -143,10 +143,10 @@ collections.wordCount = function(string){
         you used to call me on my cell phone'
 
     */
-// WHY DOES THIS NOT REPEAT?????
+    // NEED HELP !
 collections.stringRepeat = function(string, number){
     for(var i = 0; i < number; i++){
-      console.log(string);
+      return string + '\n';
     }
 };
  
