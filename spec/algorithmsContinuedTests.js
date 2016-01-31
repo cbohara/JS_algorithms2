@@ -123,7 +123,7 @@
         
         it("should return the input string as many times as the input number, separated by a new line", function(){
           var testCase = 'you used to call me on my cell phone'
-          var returnedString = collections.stringRepeat(testCase, 3);
+          var returnedString = collections.stringRepeat(testCase, 4);
           var result = 'you used to call me on my cell phone' + '\n' + 'you used to call me on my cell phone' + '\n' + 'you used to call me on my cell phone' + '\n';
 
           expect(returnedString).to.equal(result);

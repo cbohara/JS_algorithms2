@@ -143,16 +143,13 @@ collections.wordCount = function(string){
         you used to call me on my cell phone'
 
     */
-    // NEED HELP !
 collections.stringRepeat = function(string, number){
-    for(var i = 0; i < number; i++){
-      return string + '\n';
-    }
+    //create variable that holds string and new line tag
+    var stringPlusNewLine = string + '\n';
+    //use repeat method to repeat stringPlusNewLine as many times as input numbers asks for
+    var toPrint = stringPlusNewLine.repeat(number);
+    return toPrint;
 };
- 
-// var testCase = 'you used to call me on my cell phone'
-// var newString = collections.stringRepeat(testCase, 3);
-// console.log('newString',newString);
 
 // 6. create a function, collections.noUms that takes a string and returns a similar string but without the the word 'um'.
     /*
