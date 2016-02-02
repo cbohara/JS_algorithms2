@@ -202,8 +202,8 @@
       describe('passwordCheck', function(){
         it('should validate that the password has at least one number', function(){
 
-        var password = 'ringaDemonFlo0d';
-        var failword = 'myname';
+        // var password = 'ringaDemonFlo0d';
+        // var failword = 'myname';
           expect(collections.passwordCheck(password)).to.equal('great password');
           expect(collections.passwordCheck(failword)).to.equal('your password needs work');
         });

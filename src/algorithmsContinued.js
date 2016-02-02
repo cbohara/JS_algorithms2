@@ -227,13 +227,26 @@ collections.advancedRange = function(start, stop){
 collections.passwordCheck = function(string){
   //split string password into array with one character per array index
   var array = string.split("");
-  //return 'your password needs work' if password is not at least 7 characters long
+  //check if password is not at least 7 characters long
   if(array.length < 7)
     return 'your password needs work';
-  //loop through array to determine if password contains at least one number 
-  //loop through array to determine if password contains at least one capital letter
+  //if password is greater or equal to 7 characters, then check if password contains a number
+  else if(array.length >= 7){
+    //loop through array to determine if password contains a number
+    for(var i = 0; i < array.length; i++){
+      var sum = 0;
+      if(!isNaN(array[i])){
+        sum += array[i];
+      }
+      if(sum === 0){
+        console.log('no number in password')
+        return 'your password needs work';
+      }
+    }
+  }
 };
-collections.passwordCheck('hello1234');
+
+collections.passwordCheck('5bhdsd5elloits');
 
 
 //10. create a function collections.matrixMaxTraversal that goes through an array of arrays filled with numbers, and returns an array filled with the highest numbers in each array
